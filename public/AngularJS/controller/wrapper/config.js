@@ -38,17 +38,18 @@ app.config(function ($stateProvider, $urlRouterProvider){
          })
 
          .state ('dashboard', {
-           resolve :{
-              "check" : function(authFactory){ return   authFactory.isAuthenticated();},
-            },
+           
                 url: '/dashboard',
-               
+                 resolve :{
+               authenticate: [ 'authFactory', function(authFactory){ return   authFactory.isAnonymous();}],
+            },
             views: {
               'template': {
                 templateUrl: 'AngularJS/view/template/dashboard.html',
                 controller: 'authCtrl',                
               }
-            },
+            
+            }
 
             
 

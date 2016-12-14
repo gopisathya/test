@@ -15,14 +15,14 @@ var session = require('express-session');
 
 
 
-router.use(session({
-    secret: 'Gopinath',
-    resave: false,
-    saveUninitialized: true ,
-    httpOnly: true,
-    secure: true,
+// router.use(session({
+//     secret: 'Gopinath',
+//     resave: false,
+//     saveUninitialized: true ,
+//     httpOnly: true,
+//     secure: true,
      
-})); 
+// })); 
 function IsAuthenticated(req,res,next)
 {   
    sess=req.session;
